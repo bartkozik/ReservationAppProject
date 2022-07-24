@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+<div>
+<form method="post">
+
+    <h1>{{ message }}</h1>
+
+    {%  csrf_token %}
+    <input type="text" name="room_name" value="{{ room.name }}" placeholder="Nazwa Sali">
+    <input type="number" name="capacity" value="{{ room.capacity }} placeholder="Pojemność Sali">
+    <input type="checkbox" name="screen_availability" {% if room.screen_avail %} checked {% endif %}> Dostępność rzutnika
+    <button type="submit">Edytuj</button>
+</form>
+
+    {% if error %}
+        {{error}}
+
+</div>
+{% endif %}
+
+{% endblock %}

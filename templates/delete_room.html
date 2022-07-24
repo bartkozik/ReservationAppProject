@@ -1,0 +1,9 @@
+{%  extends 'base.html' %}
+{% block zawartosc %}
+    <p>Czy jesteś pewnien, że chcesz usunąć salę?
+        {{ room.name }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="tak" name="potwierdzenie">
+        </form>
+{% endblock %}

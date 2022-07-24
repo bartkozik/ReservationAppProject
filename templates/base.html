@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Conference Spot</title>
+
+    <style>
+
+footer {
+  text-align: left;
+  padding: 3px;
+  background-color: blanchedalmond;
+  color: cadetblue;
+}
+</style>
+</head>
+<body>
+    {% if request.session.user %}
+        <li><a href="/logout/">Wyloguj Użytkownika</a></li>
+    {% else %}
+        <li><a href="/login/">Zaloguj Użytkownika</a></li>
+    {% endif %}
+
+
+<h1> Twoje sale konferencyjne:</h1>
+
+<ul>
+
+    <li><a href="/">Strona główna</a></li>
+    <li><a href="/all_rooms/">Wyświetl Dostępne Sale</a></li>
+    <li><a href="/room/new/">Dodaj Salę</a></li>
+    <li><a href="/all_rooms_reservations/">Zobacz rezerwacje</a></li>
+    <li><a href="/adduser/">Dodaj Użytkownika</a> </li>
+
+
+
+</ul>
+
+{% block zawartosc %}
+{%  endblock %}
+
+
+
+<footer>
+  <p>Author: Bartosz Kozikowski<br>
+  <a href="mailto:biuro@v27.pl">Napisz do mnie</a></p>
+</footer>
+</body>
+</html>

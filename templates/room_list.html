@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+
+    {{ message }}
+    <ul>
+    {%  for room in rooms %}
+        <p>[============================================]</p>
+        <th>Nazwa sali: {{ room.name }}</th><br>
+        <th>Pojemność sali: {{ room.capacity }}</th><br>
+        <th>Dostępność projektora: {{ room.screen_avail }} </th><br>
+        <th>Dostępność sali dzisiaj: {{ message }}</th><br>
+          {% if room.reserved %}
+              <td>Zarezerwowana</td>
+    {% else %}
+       <td>Dostępna</td><br>
+     {% endif %}
+        <p> -------------------------------------------- </p>
+
+        <a href="/all_rooms/modify_room/{{ room.id }}/"> Modyfikuj ustawienia sali </a></li><br>
+        <a href="/all_rooms/reserv_room/{{ room.id }}/"> Rezerwuj salę </a></li><br>
+        <a href="del_room/{{ room.id }}/"> Usuń  salę </a></li><br>
+        <p>[============================================]</p>
+    {% empty %}
+        
+    {% endfor %}
+    </ul>
+
+{% endblock %}

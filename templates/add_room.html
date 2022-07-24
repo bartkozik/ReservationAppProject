@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+<div>
+<form method="post">
+    {%  csrf_token %}
+    <input type="text" name="room_name" placeholder="Nazwa Sali">
+    <input type="number" name="capacity" placeholder="Pojemność Sali">
+    <input type="checkbox" name="screen_availability" value="on"> Dostępność rzutnika </input>
+    <input type="submit">
+</form>
+
+{{ message }}
+
+</div>
+
+    {% if error %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{error}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

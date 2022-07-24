@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+<div>
+<form method="post">
+
+    {%  csrf_token %}
+    <p>[=============================================]</p>
+    <h3>Nazwa rezerwowanej sali: {{ room.name }}</h3>
+    <input type="text" name="comment" placeholder="Komentarz do rezerwacji">
+    <input type="date" name="date" placeholder="Data rezerwacji">
+    <button type="submit">Rezerwuj</button>
+    <p>[=============================================]</p>
+        {% if error %}
+        {{error}}
+{% endif %}
+    <p>[=============================================]</p>
+</form>
+
+
+</div>
+{% endblock %}

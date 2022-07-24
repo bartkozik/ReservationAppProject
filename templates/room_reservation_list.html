@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block zawartosc %}
+
+    {{ message }}
+    <ul>
+    {%  for room in rooms %}
+        <p>[============================================]</p>
+        <th>Nazwa sali: {{ room.room_id.name }}</th><br>
+        <th>Data rezerwacji: {{ room.date }}</th><br>
+        <th>Dodatkowy opis do rezerwacji: {{ room.comment }} </th><br>
+
+        <p>[============================================]</p>
+{% endfor%}
+    </ul>
+
+{% endblock %}
