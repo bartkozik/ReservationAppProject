@@ -1,1 +1,1 @@
-# Workshop app, simpme Reservation App for hotel usage.
+# Workshop app, Reservation App for hotel usage.
