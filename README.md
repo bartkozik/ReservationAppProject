@@ -1,1 +1,1 @@
-# Workshop app, Reservation App for hotel usage.
+# Reservation App is simple application for hotel usage, made in Django.
